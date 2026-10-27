@@ -1,0 +1,8 @@
+duplicate natural key: PASS 
+orphan event:          PASS 
+NULL key:              PASS 
+wrong type:            PASS 
+idempotence:           PASS 
+atomicity:             PASS 
+
+6 of 6 checks passed

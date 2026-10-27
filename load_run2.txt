@@ -1,0 +1,16 @@
+files read: 824 raw files (2026-10-12T00:22:36Z .. 2026-10-12T00:39:51Z)
+genre: 23 in database (+0 this run)
+artist: 1,176 in database (+0 this run)
+album: 1,745 in database (+0 this run)
+track: 2,048 in database (+0 this run)
+recording: 102 in database (+0 this run)
+track_detail: 100 in database (+0 this run)
+album_detail: 100 in database (+0 this run)
+chart_entry: 2,299 in database (+0 this run)
+artist_fans: 100 in database (+0 this run)
+track_recording: 102 in database (+0 this run)
+quarantine: 0 in database (+0 this run)
+values cleaned: 16 (invalid values -> NULL)
+quarantined: 0 records
+foreign_key_check: OK
+STATUS: COMPLETE
