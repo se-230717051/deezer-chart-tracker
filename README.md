@@ -36,7 +36,7 @@
    
  Needs Python 3.9 or newer.](https://musicbrainz.org "https://musicbrainz.org")  
 ```  
-git clone https://github.com/<your-github-username>/deezer-chart-tracker.git    
+git clone https://github.com/se-230717051/deezer-chart-tracker.git    
   cd deezer-chart-tracker    
       
   python -m venv venv    
