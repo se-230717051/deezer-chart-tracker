@@ -1,0 +1,114 @@
+
+======================================================================
+1. ROW COUNTS
+======================================================================
+genre                  23 rows
+artist               1176 rows
+album                1745 rows
+track                2048 rows
+recording             102 rows
+track_detail          100 rows
+album_detail          100 rows
+chart_entry          2299 rows
+artist_fans           100 rows
+track_recording       102 rows
+quarantine              0 rows
+
+======================================================================
+2. MISSING VALUES (NULL or empty text)
+======================================================================
+recording.length_ms: 1 of 102 (1.0%)
+recording.first_release_date: 9 of 102 (8.8%)
+
+======================================================================
+3. NUMBERS: min / median / max, zeros, negatives, most frequent value
+======================================================================
+track.duration: min 25 | median 207.5 | max 1638 | zeros 0 | negatives 0 | most frequent {192: 22, 212: 20, 224: 20}
+track.explicit: min 0 | median 0.0 | max 1 | zeros 1814 | negatives 0 | most frequent {0: 1814, 1: 234}
+album_detail.nb_tracks: min 1 | median 1.0 | max 45 | zeros 0 | negatives 0 | most frequent {1: 58, 12: 5, 16: 4}
+artist_fans.nb_fan: min 597 | median 1148728.0 | max 20933670 | zeros 0 | negatives 0 | most frequent {1149727: 1, 11754475: 1, 5219785: 1}
+chart_entry.position: min 1 | median 50.0 | max 100 | zeros 0 | negatives 0 | most frequent {1: 23, 2: 23, 3: 23}
+chart_entry.rank: min 6963 | median 735846.0 | max 1000000 | zeros 0 | negatives 0 | most frequent {954234: 6, 954166: 5, 916433: 5}
+recording.length_ms: min 120000.0 | median 206813.0 | max 364826.0 | zeros 0 | negatives 0 | most frequent {172533.0: 2, 184000.0: 2, 192000.0: 2}
+
+======================================================================
+4. DATES
+======================================================================
+track_detail.release_date: 1979-07-27 .. 2026-10-09 | in the future: 0 | before 1950: 0
+album_detail.release_date: 1979-07-27 .. 2026-10-09 | in the future: 0 | before 1950: 0
+recording.first_release_date: 1979-07-27 .. 2026-10-09 | in the future: 0 | before 1950: 0
+chart snapshot days: ['2026-10-12']
+
+======================================================================
+5. TEXT: do equal things look equal?
+======================================================================
+artist.name: not NFC 0 | leading/trailing space 3 | non-breaking space 1 | double space 0
+    padded: 'ILLIT '
+    padded: 'Leandro & Leonardo '
+    padded: 'Dhanush '
+    nbsp: 'Çocuk şarkıları\xa0Superstar'
+album.title: not NFC 1 | leading/trailing space 1 | non-breaking space 1 | double space 0
+    not NFC: 'Fille à Papa'
+    padded: 'Bak postacı geliyor\xa0'
+    nbsp: 'Bak postacı geliyor\xa0'
+track.title: not NFC 3 | leading/trailing space 2 | non-breaking space 2 | double space 0
+    not NFC: 'Fille à Papa'
+    not NFC: 'Çok Güzel Gülüyorsun'
+    not NFC: 'Adaletin Bu Mu Dünya'
+    padded: 'Bak postacı geliyor\xa0'
+    padded: "Al 1'de Burdan Yak\xa0"
+    nbsp: 'Bak postacı geliyor\xa0'
+    nbsp: "Al 1'de Burdan Yak\xa0"
+genre.name: not NFC 0 | leading/trailing space 0 | non-breaking space 0 | double space 0
+
+======================================================================
+6. IDENTITY: one thing recorded as two?
+======================================================================
+artists with the same name but different Deezer id: 2 names
+ deezer_id  name
+  11446160  LiSA
+ 145068682  LISA
+   8673550 Vacra
+ 222719305 Vacra
+
+tracks with the same title and artist but different track id: 13 rows
+ deezer_id                                           title  artist_key
+4015341011                                         Dai Dai           1
+4095595211                                         Dai Dai           1
+4078687321                                         Dai Dai           1
+    576431                                Eye of the Tiger         637
+    632868                                Eye of the Tiger         637
+ 140869461                                           Human          65
+ 128878464                                           Human          65
+  14552280 My Heart Will Go On (Love Theme from "Titanic")         109
+  17000055 My Heart Will Go On (Love Theme from "Titanic")         109
+  64920072                                       Nightcall         296
+
+ISRCs shared by more than one track: 0
+
+======================================================================
+7. CHART COVERAGE: equal things compared equally?
+======================================================================
+rows per (genre, day): min 99 | median 100 | max 100
+charts with fewer than 100 rows: 1 of 23
+days per genre: {'min': 1.0, 'max': 1.0}
+tracks in more than one position of the same chart: 0
+artists that appear in charts but have no fan count: 1076 of 1176
+
+======================================================================
+8. SEQUENCES: only visible over time
+======================================================================
+largest position jumps between two days:
+ genre_key  track_key snapshot_date  position  jump
+         1          1    2026-10-12         1   NaN
+         1          2    2026-10-12         2   NaN
+         1          3    2026-10-12         3   NaN
+         1          4    2026-10-12         4   NaN
+         1          5    2026-10-12         5   NaN
+tracks whose rank is identical on 3 or more days: 0
+artists whose fan count decreased between two days: 0 | biggest decrease: nan
+
+======================================================================
+9. QUARANTINE (records M2 could not load)
+======================================================================
+Series([], )

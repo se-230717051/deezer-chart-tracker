@@ -1,0 +1,17 @@
+artist_clean: 1,176 rows (raw: 1,176)
+   text_flag:   ok 1172 | whitespace_fixed 4
+album_clean: 1,745 rows (raw: 1,745)
+   text_flag:   ok 1743 | unicode_normalised 1 | whitespace_fixed 1
+track_clean: 2,048 rows (raw: 2,048)
+   text_flag:   ok 2043 | unicode_normalised 3 | whitespace_fixed 2
+   number_flag: ok 1957 | unusual_high 88 | unusual_low 3
+artist_fans_clean: 100 rows (raw: 100)
+   number_flag: ok 98 | unusual_low 2
+recording_clean: 102 rows (raw: 102)
+   number_flag: missing_not_reported 1 | ok 98 | unusual_high 3
+   date_flag:   missing_not_reported 9 | ok 93
+mappings: identity_map 2 of 2 CSV rows loaded (unmatched: none)
+artist names that are equal after normalising but have no identity decision: 0
+M2 tables unchanged: OK
+foreign_key_check: OK
+STATUS: COMPLETE

@@ -1,0 +1,11 @@
+PASS  cleaned tables have the same row count as raw                all 5 equal
+PASS  no impossible value in a cleaned column                      0 found
+PASS  foreign_key_check is empty                                   OK
+PASS  missing share per recording column at most 10%               first_release_date 8.8%, length_ms 1.0%
+WARN  at least 50% of artists have a fan count                     100 of 1176 artists (8.5%)
+PASS  every genre has a chart on the latest day (2026-10-12)       23 of 23 genres
+PASS  chart positions within 1..100 and rank > 0                   0 bad rows
+PASS  no artist-name collision without an identity decision        0 unresolved
+WARN  no song under several track ids (same artist, same title)    6 groups (kept separate, see report)
+
+STATUS: OK (see WARN lines, if any)
